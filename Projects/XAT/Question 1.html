@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Questionnaire</title>
+</head>
+<body>
+	<h1 class="message"></h1>
+	<section>
+		<h1> <span>Xchemes</span> Analytical Tool <label>(XAT)</label> </h1>
+		<div class="options">
+			<label for=""> Input number of rows:</label>
+			<input type="text" placeholder="number of rows">
+			<button id="create-table"> Create Table row(s) </button>
+			<button id="help"> Help </button>
+		</div>
+		<div class="container">
+			<div class="labels">
+				<label title="Serial number">s/n</label>
+				<label title="Strongly Agree value=4">sa</label>
+				<label title="Agree value= 3">a</label>
+				<label title="Disagree value= 2">d</label>
+				<label title="Strongly Disagree value=1">sd</label>
+				<label title="summation of SA, A, D & SD">total</label>
+				<label title="summation of SA* its value, A* its value, D* its value & SD* its value / total ">mean</label>
+				<label title="">standard Deviation</label>
+				<label id="del-all" title="click to delete all the rows"> DELETE ALL </label>
+			</div>
+
+			<div class="grand-mean">
+				<label title="summation of all means / number of means"> Grand Mean</label>
+				<label id="grand-mean"></label>
+				<label id="to-table"> Convert to Table </label>
+			</div>
+		</div>
+	</section>
+	<div class="to-table"><span>X</span></div>
+
+	<nav>
+		<h1> import tables from external sources like word, excel..etc</h1>
+		<p> Tables must be in this format to prevent error and special charaters aren't supported. only numbers</p>
+		<table id="sample">
+			<tr>
+				<th>S/N</th>
+				<th>SA</th>
+				<th>A</th>
+				<th>D</th>
+				<th>SD</th>
+			</tr>
+		</table>
+		<div class="import" contenteditable="true"></div>
+			<div class="to-XAT">
+				<label id="to-XAT"> Run in XAT </label>
+			</div>
+	</nav>
+
+	<div class="help">
+		<span>X</span>
+		<h1>HOW TO USE XAT</h1>
+
+		
+		<div class="helper">
+			<h1>How to create a table</h1>
+			<p> In the "Input number of rows" section at the top left of your screen,
+				you put the number of row you want your table to have and click on the
+				Create table row(s) button </p>
+		</div>
+
+		<div class="helper">
+			<h1>How to Import a table</h1>
+			<p> To import a table from Microsoft Word or Excel, etc, simply copy the table you wish to import and
+				paste it in the black space above the "Run in XAT button"
+				<b>Note:</b> the table must contain numbers only, (no special characters) and it must have a minimum of 4 columns and a maximum of 5. After pasting the table, click the "Run in XAT button"
+				<b>Also:</b> if you want to import multiple tables, you must copy then paste then click the "Run in XAT button" before you copy the next table </p>
+		</div>
+
+		<div class="helper">
+			<h1>How to Export a table</h1>
+			<p> If you are done with your calculations and you wish to export your work to an external source like 
+				Microsoft Word or Excel, simply click on the "Convert to Table button." It will create a table containing all the necessary data which you can then copy and paste where ever you wish. To copy the
+				table, simply left click and hold then drag your cursor along until you have highlighted all you wish to copy then press Ctrl+C to copy or right click and chose the copy option. </p>
+		</div>
+
+		<div class="helper">
+			<p> If you have any further question, you can reach me via my facebook page <a href="www.facebook.com/Schemes-114791493770222/"> Schemes Help</a> </p>
+		</div>
+
+	</div>
+
+<script src="file:///C:/Users/user/Desktop/Codes/Xchemes.js"></script>
+<script src="questionnaire.js"></script>
+</body>
+</html>

@@ -1,0 +1,517 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+
+:root{
+	--main: rgb(30,30,200);
+	--clear: #fff;
+	--wlg: -webkit-linear-gradient(120deg, rgba(255,255,255,0.8), rgba(255,90,255,0.8), rgba(255,255,255,0.8));
+}
+
+a{
+	text-decoration: none;
+	color: var(--clear);
+}
+
+ul{
+	list-style: none;
+}
+
+.container{
+	width: 100vw;
+	transition: ease 0.5s;
+	position: relative;
+}
+
+.containerMove{
+	transform: translateX(-30vw);
+}
+
+.advert-box{
+	display: none;
+}
+
+.blanket{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(10,10,10,0.5);
+	display: none;
+	z-index: 9;
+}
+
+.header{
+	padding: 0 5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.title{
+	width: 50%;
+	min-width: 300px;
+	padding: 5px;
+	color: var(--main);
+}
+
+.title span{
+	background: var(--wlg);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.search{
+	width: 45%;
+	min-width: 400px;
+	padding: 5px;
+}
+
+.search input{
+	padding: 10px 15px;
+	border-radius: 5px;
+}
+
+.search input:nth-child(1){
+	width: 70%;
+	border: solid 2px var(--main);
+	color: var(--main);
+	outline: none;
+}
+
+.search input:nth-child(2){
+	width: 25%;
+	background: var(--main);
+	color: var(--clear);
+	border: none;
+	outline: none;
+}
+
+.search input:nth-child(2):hover{
+	transform: scaleY(1.2);
+}
+
+.top-bar{
+	background: var(--main);
+	height: 50px;
+	padding: 0 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 3;
+}
+
+.expand{
+	height: 350px;
+}
+
+.nav-items{
+	width: 80%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.nav-items li{
+	flex: 1;
+	border-left: solid 2px var(--clear);
+	padding: 10px 20px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.nav-items li::after{
+	content: '';
+	height: 10px;
+	width: 10px;
+	background: var(--main);
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%, 50%) rotate(45deg);
+	transition: .5s ease;
+}
+
+.nav-items li:last-child{
+	border-right: solid 2px var(--clear);
+}
+
+.active,
+.nav-items li:hover{
+	background: var(--clear);
+}
+
+.active a,
+.nav-items li:hover a{
+	color: var(--main);
+}
+
+.nav-items li a{
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.menu-btn{ 
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	display: none;
+	flex-direction: column;
+	justify-content: space-around;
+	cursor: pointer;
+}
+
+.menu-btn span{
+	background: var(--clear);
+	padding: 2px;
+	border-radius: 1px;
+	transition: 0.3s;
+}
+
+.menu-btn span:nth-child(1){
+	width: 100%;
+}
+
+.menu-btn span:nth-child(2){
+	width: 75%;
+}
+
+.menu-btn span:nth-child(3){
+	width: 50%;
+}
+
+
+.watch-slide{
+	width: 90%;
+	margin: 10px auto;
+	min-width: 500px;
+	height: 500px;
+	border-radius: 5px;
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	border: solid 3px var(--main);
+}
+
+.hide-slider{
+	display: none;
+}
+
+.slider{
+	height: 500px;
+	min-width: 100%;
+	display: flex;
+}
+
+.slides{
+	min-width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+}
+
+.slides img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.slides p{
+	background: rgba(10,10,10,0.7);
+	color: var(--clear);
+	font-size: 20px;
+	padding: 10px 20px;
+	z-index: 1;
+}
+
+.thumbnails{
+	width: 30%;
+	min-width: 300px;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-self: center;
+	z-index: 1;
+}
+
+.thumbnails span{
+	width: 20px;
+	height: 20px;
+	background: var(--clear);
+	border: solid 2px var(--main);
+}
+
+h2{
+	width: 90%;
+	margin: 5px auto;
+	padding: 10px 20px;
+	border-top: solid 2px var(--main);
+	border-bottom: solid 2px var(--main);
+	text-transform: uppercase;
+	color: var(--main);
+	text-align: center;
+}
+
+#return-btn{
+	padding: 10px 20px;
+	border: solid 1px var(--main);
+	transform: translateX(-200px);
+	margin-right: auto;
+	cursor: pointer;
+}
+
+.watches-box{
+	border: solid 2px var(--main);
+	width: 90%;
+	margin: 5px auto;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.watches{
+	margin: 10px 10px;
+	width: 20%;
+	min-width: 250px;
+	height: 300px;
+	position: relative;
+	border: solid 2px var(--main);
+	border-radius: 5px;
+}
+
+.watches img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 85%;
+}
+
+.watches p{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 15%;
+	border-top: solid 2px var(--main);
+	border-bottom: solid 2px var(--main);
+	text-align: center;
+	color: var(--main);
+}
+
+.watches span{
+	position: absolute;
+	top: 50%;
+	transform: translateY(50%);
+	padding: 10px 20px;
+	background: var(--main);
+	color: var(--clear);
+}
+
+.watches .old-price{
+	top: 0;
+	right: 10px;
+	text-decoration: line-through var(--clear) double;
+}
+
+.watches .price{
+	left: 0;
+}
+
+.watches .add-to-cart{
+	right: 0;
+	cursor: pointer;
+}
+
+.added-to-cart{
+	pointer-events: none;
+	background: var(--clear);
+	color: var(--main);
+	border: solid 2px var(--main);
+}
+
+.cart{
+	width: 30vw;
+	min-width: 500px;
+	height: 100vh;
+	background: var(--main);
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	overflow-y: scroll;
+	transition: ease 0.5s;
+	transform: translateX(100%);
+}
+
+.cart header{
+	position: sticky;
+	top: 0;
+	width: 100%;
+	padding: 20px 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background: var(--main);
+	border-bottom: solid 2px var(--clear);
+}
+
+.cart header h2{
+	padding: 5px;
+	margin: 5px;
+	text-align: center;
+	color: var(--clear);
+	border-top: solid 2px var(--clear);
+	border-bottom: solid 2px var(--clear);
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.cart header a{
+	width: 10%;
+	min-width: 100px;
+	padding: 5px;
+	margin: 5px;
+	text-align: left;
+	background: var(--clear);
+	color: var(--main);
+	text-align: center;
+}
+
+.cart-items{
+	height: 250px;
+	width: 100%;
+	display: flex;
+	padding: 10px;
+	margin: 5px 0;
+	position: relative;
+	z-index: -1;
+}
+
+.cart-items img{
+	flex: 1;
+	height: 100%;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px rgba(10,10,10,0.3);
+}
+
+.cart-items div{
+	flex: 1;
+	height: 100%;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.cart-items div .des{
+	color: var(--clear);
+	text-align: center;
+	font-size: 20px;
+}
+
+.cart-items div span{
+	text-align: center;
+	color: var(--clear);
+}
+
+.cart-items div input{
+	outline: none;
+	width: 30%;
+	margin-left: 10px;
+	text-align: center;
+}
+
+.cart-items div .amount{
+	color: var(--clear);
+	font-weight: 800;
+	font-size: 20px;
+	text-align: center;
+	border-top: solid 2px var(--clear);
+	border-bottom: solid 2px var(--clear);
+}
+
+.close-cartItem{
+	padding: 10px 20px;
+	background: red;
+	color: var(--clear);
+	font-size: 20px;
+	font-weight: 700;
+	height: 50px;
+	position: absolute;
+	left: 10px;
+	cursor: pointer;
+}
+
+.close-cartItem:hover{
+	transform: scale(1.1);
+}
+
+.cart .total-price{
+	position: sticky;
+	bottom: 0;
+	width: 100%;
+	height: 70px;
+	padding: 20px 10px;
+	display: flex;
+	align-items: center;
+	background: var(--main);
+	color: var(--clear);
+	font-weight: 800;
+	font-size: 20px;
+	border-top: solid 2px var(--clear);
+	border-bottom: solid 2px var(--clear);
+}
+
+.total-price p{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 3px;
+}
+
+#total-price{
+	border-bottom: solid 2px var(--clear);
+}
+
+.buy{
+	border: solid 2px var(--clear);
+	border-radius: 5px;
+}
+
+.footer{
+	width: 100vw;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	color: white;
+	background: var(--main);
+}
+
+.footer h1{
+	margin: 0 20px;
+}
