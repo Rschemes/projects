@@ -1,0 +1,260 @@
+@media (max-width: 900px) {
+
+.container{
+	width: 100%;
+	height: inherit;
+	padding: 2%;
+}
+
+.container h1{
+	grid-row: 1;
+	text-align: center;
+	font-size: 80%;
+}	
+
+.menu h3{
+	padding: 2%;
+	font-size: 60%;
+}
+
+.book-n-borrower{
+	width: initial;
+	display: flex;
+	padding: 2%;
+}
+
+.books{
+	min-width: 100%;
+	position: static;
+	display: block;
+	padding: 2%
+}
+
+.borrowers{
+	min-width: 100%;
+	position: static;
+	display: block;
+	padding: 2%
+}
+
+/* shared styles */
+
+.book-search, .borrowers-search{
+	grid-row: 4;
+	align-self: center;
+	height: 30px;
+	display: flex;
+	padding: 2%;
+}
+
+.book-search legend, .borrowers-search legend{
+	flex: 2;
+	width: 30%;
+	padding: 2%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+.book-search legend p, .borrowers-search legend p{
+	padding: 2%;
+	font-size: 70%;
+	align-self: center;
+	display: none;
+}
+
+.book-search input, .borrowers-search input{
+	flex: 4;
+	width: 67%;
+	padding: 2% 4%;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	font-size: 70%;
+}
+
+.book-search button, .borrowers-search button{
+	flex: 1;
+	width: 2%;
+	padding: 2%;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+.book-search button img, .borrowers-search button img{
+	width: 10px;
+	height: 10px;
+}
+
+#inputs-n-search{
+	width: 96%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	padding: 2%;
+	border-radius: 4px 3px 9px 1px;
+}
+
+#form, .borrowers-form{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.form-content{
+	width: 70%;
+	min-width: 250px;
+	height: 50px;
+	padding: 2%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1%;
+}
+
+.borrowers-form .form-content:nth-child(4) input {
+	padding: 15px;
+}
+
+.form-content label{
+	padding: 2%;
+	font-size: 70%;
+}
+
+.form-content input{
+	padding: 2%;
+	border-radius: 5px 4px 1px 4px;
+}
+
+#form button, .borrowers-form button{
+	width: 70%;
+	margin-top: 4%;
+	height: 30px;
+	padding: 2%;
+	font-size: 70%;
+	border-radius: 5px 1px 3px 5px;
+	background: var(--bg-test);
+	color: var(--text-secondary);
+	border: solid 2px var(--bg-primary);
+	transition: var(--trasition-speed);
+	letter-spacing: 0.05em;
+}
+
+#bar{
+	padding: 2%;
+	height: 30px;
+	margin-top: 2%;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+	border-radius: 5px 6px 1px 4px;
+}
+
+#bar img{
+	width: 20px;
+	height: 20px;
+	padding: 2%;
+	margin: 0 2%;
+}
+
+#bar .logo-name{
+	flex: 0 0 60%;
+}
+
+#bar .logo-name h2{
+	padding: 2%;
+	margin: 0 2%;
+	font-size: 80%;
+}
+
+#bar .div{
+	flex: 0 0 40%;
+}
+
+#bar .div label{
+	flex: 0 0 70%;
+	font-size: 80%;
+}
+
+#bar .div input{
+	flex: 0 0 20%;
+	padding: 2%;
+	width: 20px;
+	font-size: 80%;
+}
+
+#table{
+	margin: 2% auto;
+	width: 98%;
+	padding: 2%;
+	box-shadow: 0 1px 7px rgba(0,0,0,0.5), -0 -1px 2px rgba(0,0,0,0.5);
+	border-radius: 5px 3px 4px 2px;
+	overflow-x: scroll;
+	font-size: 70%;
+}
+
+#table-head{
+	position: sticky;
+	overflow-x: scroll;
+	top: 52px;
+	padding: 2%;
+	box-shadow: 0 1px 7px rgba(0,0,0,0.5), -0 -1px 2px rgba(0,0,0,0.5);
+	border-radius: 3px 7px 4px 7px;
+}
+
+#table-head th{
+	text-align: center;
+	font-size: 80%;
+}
+
+.table-body img, .borrowers-head img{
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+}
+
+/*Books style*/
+
+.for-borrower{
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	padding: 2%;
+}
+
+.show-hide-for-borrower{
+	display: flex;
+}
+
+.fb-btn-holder{
+	width: 70%;
+}
+
+.for-borrower .form-content:nth-child(4) input{
+	padding: 10px;
+}
+
+#fb-btn{
+	height: 20px;
+	padding: 2%;
+}
+
+
+#switch{
+	display: none;
+}
+
+#edit-save,
+#edit-cancel{
+	color: var(--bg-secondary);
+}
+
+.success, .error{
+	top: 40%;
+	left: 5%;
+	width: 40%;
+	margin: 0 auto;
+	transform: translate(0,-50);
+	padding: 10px;
+	font-size: 80%;
+}
+
+}

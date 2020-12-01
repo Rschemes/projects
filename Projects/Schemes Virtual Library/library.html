@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Virtual Library Catalogue</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="CSS/library style.css">
+	<link rel="stylesheet" type="text/css" href="CSS/mq.css">
+	<!--<link rel="stylesheet" type="text/css" href="CSS/security.css">-->
+	<script type="text/javascript" src="scripts/jquery-3.4.1.min2.js"></script>
+	<!--<script type="text/javascript" src="scripts/security.js" defer></script>-->
+	<script type="text/javascript" src="scripts/library script.js" defer></script>
+</head>
+<body id="body">
+	
+	<div class="container"> 
+			<h1> Schemes Virtual Library Catalogue </h1>
+			<nav class="menu">
+				<h3 class="book-btn" title="Click to see Book Collection"> Home / Book Collection</h3>
+				<h3 class="borrowers-btn" title="Click to see borrower's section"> Borrowed Books</h3>
+			</nav>
+			<nav class="slider"><span></span></nav>
+
+			<div class="book-search">
+					<legend>
+						<p> Filter Search</p>
+						<select> 
+							<option>All</option>
+							<option>Title</option>
+							<option>Author</option>
+							<option>ISBN</option>
+							<option>Call Number</option>
+							<option>Subtitle</option>
+						</select>
+					</legend>
+					<input type="search" id="book-search" placeholder="Search Books..">
+					<button id="search-btn"> <img src="images/search.png"> </button>
+				</div>
+
+			<div class="borrowers-search">
+					<legend>
+						<p> Filter Search</p>
+						<select> 
+							<option>All</option>
+							<option>Borrowers Name</option>
+							<option>Borrowers Address</option>
+							<option>Borrowers Number</option>
+							<option>Date borrowed</option>
+							<option>Book Title</option>
+							<option>Book Author</option>
+							<option>Book ISBN</option>
+							<option>Book Call Number</option>
+						</select>
+					</legend>
+					<input type="search" id="borrowers-search" placeholder="Search Borrowers..">
+					<button id="borrowers-search-btn"> <img src="images/search.png"> </button>
+				</div>
+	</div>
+	
+<div class="book-n-borrower">
+
+	<div class="books">
+			<div class="book-inputs-n-search" id="inputs-n-search">
+				<form class="book-form" id="form">
+					<div class="form-content">
+						<label for="book-title"> Title: (<span>Required</span>)</label>
+						<input type="text" id="book-title" required>
+					</div>
+
+					<div class="form-content">
+						<label for="book-author"> Author: (<span>Required</span>)</label>
+						<input type="text" id="book-author" required>
+					</div>
+
+					<div class="form-content">
+						<label for="book-ISBN"> ISBN: (<span>Required</span>)</label>
+						<input type="text" id="book-ISBN" required>
+					</div>
+
+					<div class="form-content">
+						<label for="book-callNumber"> Call Number: (<span>Required</span>)</label>
+						<input type="text" id="book-CN" required>
+					</div>
+
+					<div class="form-content">
+						<label for="book-subtitle"> Subtitle: (<span id="nr">Not Required</span>)</label>
+						<input type="text" id="book-subtitle">
+					</div>
+
+					<button id="book-sum-btn"> Add Books</button>
+				</form>
+
+			</div>
+
+
+			<div class="book-bar" id="bar">
+				<div class="logo-name">
+					<img src="images/books.png">
+					<h2> Book List </h2>
+				</div>
+				<div class="div">
+					<label for="no-of-books"> No of Books: </label>
+					<input type="text" id="no-of-books" value="0" readonly>
+				</div>
+				<button id="close-search"> Return to List </button>
+			</div>
+
+			<table class="book-table" id="table">
+				<tr class="table-head" id="table-head">
+					<th>S/N</th>
+					<th>Title</th>
+					<th>Subtitle</th>
+					<th>Author</th>
+					<th>ISBN</th>
+					<th>Call Number</th>
+					<th>Options</th>
+				</tr>
+			</table>
+
+	</div>
+
+	<div class="borrowers">
+			<div class="borrowers-inputs-n-search" id="inputs-n-search">
+				<form class="borrowers-form">
+					<div class="form-content">
+						<label for="borrowers-name"> Borrowers Name: (<span>Required</span>)</label>
+						<input type="text" id="borrowers-name" required>
+					</div>
+
+					<div class="form-content">
+						<label for="borrowers-address"> Borrowers Address: (<span>Required</span>)</label>
+						<input type="text" id="borrowers-address" required>
+					</div>
+
+					<div class="form-content">
+						<label for="borrowers-number"> Borrowers Number: (<span>Required</span>)</label>
+						<input type="text" id="borrowers-number" required>
+					</div>
+
+					<div class="form-content">
+						<label for="date-borrowed"> Date Borrowed: (<span>Required</span>)</label>
+						<input type="date" id="date-borrowed" required>
+					</div>
+
+					<div class="form-content">
+						<label for="title-of-bb"> Book Title: (<span>Required</span>)</label>
+						<input type="text" id="title-of-bb" required>
+					</div>
+
+					<div class="form-content">
+						<label for="author-of-bb"> Book Author: (<span>Required</span>)</label>
+						<input type="text" id="author-of-bb" required>
+					</div>
+
+					<div class="form-content">
+						<label for="ISBN-of-bb"> Book ISBN: (<span>Required</span>)</label>
+						<input type="text" id="ISBN-of-bb" required>
+					</div>
+
+					<div class="form-content">
+						<label for="call-number-of-bb"> Book Call Number: (<span>Required</span>)</label>
+						<input type="text" id="call-number-of-bb" required>
+					</div>
+
+					<button id="borrowers-sum-btn"> Add Borrower</button>
+				</form>
+			</div>
+
+
+			<div class="borrowers-bar" id="bar">
+				<div class="logo-name">
+					<img src="images/borrowers.png">
+					<h2> Borrowers List </h2>
+				</div>
+				<div class="div">
+					<label for="no-of-borrowers"> No of Borrowers: </label>
+					<input type="text" id="no-of-borrowers" value="0" readonly>
+				</div>
+				<button id="close-search"> Return to List </button>
+			</div>
+
+			<table class="borrowers-table" id="table">
+				<tr class="table-head borrowers-table-head" id="table-head">
+					<th>S/N</th>
+					<th>Borrower's Name</th>
+					<th>Borrower's Address</th>
+					<th>Borrower's Number</th>
+					<th>Date Borrowed</th>
+					<th> </th>
+					<th>Options</th>
+				</tr>
+			</table>
+
+
+	</div>
+</div>
+</body>
+
+</html>

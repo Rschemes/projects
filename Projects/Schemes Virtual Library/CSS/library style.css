@@ -1,0 +1,662 @@
+:root {
+	font-family: 'Open sans';
+	--text-primary: white ;
+	--text-secondary: brown/*rgb(250,250,250)*/;
+	--bg-primary: /*rgba(139,69,19,0.9)*/;
+	--bg-secondary: white;
+	--bg-test: snow/*radial-gradient(rgba(139,69,19,0.9), rgba(109,39,29,0.9))*/;
+	--trasition-speed: 1000ms;
+}
+	
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+	width: 10px;
+	height: 10px;
+	background: transparent;
+}
+
+::-webkit-scrollbar-track{
+	background: transparent;
+	width: 5px;
+}
+
+::-webkit-scrollbar-track:hover{
+	background: rgba(200,260,260,0.9);
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+	background: transparent;
+	border-radius: 10px;
+	width: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background: rgba(150,150,150);
+}
+
+
+/*body{
+	width: 100vw;
+	background-color: rgba(100,100,100,0.8);
+	background-image: url('../images/library bg2.jpg');
+	background-position: top center;
+	background-size: 100vw 100vh;
+	background-blend-mode: darken;
+	background-attachment: fixed;
+	overflow-x: hidden;
+}
+*/
+
+body{
+	width: 100vw;
+	background: var(--bg-test);
+	overflow-x: hidden;
+}
+
+.container{
+	width: 98%;
+	height: 120px;
+	margin: 0 auto;
+	padding: 5px;
+	display: grid;
+	grid-template-columns: 1fr;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.5);
+	color: var(--text-secondary);
+	background: var(--bg-test);
+	border-radius: 10px;
+}
+
+.container h1{
+	grid-row: 1;
+	text-align: center;
+	font-size: 28px;
+	text-transform: uppercase;
+	-webkit-text-stroke: 1px var(--text-secondary);
+}
+
+
+.menu{
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.menu h3{
+	text-align: center;
+	padding: 3px;
+	font-size: 20px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.menu h3:hover{
+	text-decoration: underline;
+}
+
+.slider{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: top;
+	position: relative;
+}
+
+.slider span{
+	border-top: solid var(--text-secondary) 5px;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	transition: var(--trasition-speed);
+}
+
+.book-n-borrower{
+	position: relative;
+	width: 200vw;
+	padding: 10px;
+}
+
+.books{
+	position: absolute;
+	left: 0;
+	width: 50%;
+	margin-right: 1vw;
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 10px;
+}
+
+.borrowers{
+	position: absolute;
+	right: 0;
+	width: 50%;
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 10px;
+}
+
+/*SHARED STYLES - BOOK & BORROWER*/
+
+#inputs-n-search{
+	width: 96%;
+	margin: 0 auto;
+	display: grid;
+	box-shadow: 3px 3px 3px  rgba(0,0,0,0.5), -1px -1px 3px  rgba(0,0,0,0.5);
+	grid-template-columns: 1fr;
+	padding: 10px;
+	background: var(--bg-test);
+	border-radius: 10px;
+}
+
+#form{
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+
+.form-content{
+	height: 70px;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+}
+
+.form-content label{
+	padding: 5px;
+	color: var(--text-secondary);
+}
+
+.form-content span{
+	color: rgba(200,100,100);
+}
+
+#nr{
+	color: var(--text-secondary);
+}
+
+.form-content input{
+	padding: 5px;
+	border: solid 1px var(--text-secondary);
+	outline: none;
+	color: var(--text-secondary);
+	background-color: var(--bg-primary);
+	border-radius: 5px;
+}
+
+#form button{
+	grid-column: 2/5;
+	grid-row: 2;
+	height: 30px;
+	padding: 5px;
+	background: var(--bg-test);
+	color: var(--text-secondary);
+	border: solid 2px var(--bg-primary);
+	transition: var(--trasition-speed);
+	font-size: 15px;
+	letter-spacing: 0.05em;
+	border-radius: 5px;
+}
+
+#form button:hover, .borrowers-form button:hover {
+	filter: brightness(1.2);
+}
+
+.book-search, .borrowers-search{
+	grid-row: 4;
+	align-self: center;
+	height: 40px;
+	display: flex;
+	padding: 5px;
+}
+
+.book-search legend, .borrowers-search legend{
+	flex: 0 1 15%;
+	padding: 3px;
+	display: flex;
+	justify-content: stretch;
+}
+
+
+.book-search legend p, .borrowers-search legend p{
+	padding: 3px;
+	align-self: center;
+	color: var(--text-secondary);
+}
+
+.book-search select, .borrowers-search select{
+	border-color: var(--text-secondary);
+	color: var(--text-secondary);
+	background: var(--bg-test);
+}
+
+.book-search select option, .borrowers-search select option{
+	color: var(--text-secondary);
+	background: var(--bg-primary);
+}
+
+.book-search input, .borrowers-search input{
+	flex: 0 1 80%;
+	padding: 3px 5px;
+	border: solid 1px var(--text-secondary);
+	outline: none;
+	color: var(--text-secondary);
+	background-color: var(--bg-test);
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.book-search button, .borrowers-search button{
+	flex: 0 1 5%;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--text-secondary);
+	transition: var(--trasition-speed);
+	border: solid 1px var(--text-secondary);
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.book-search button img, .borrowers-search button img{
+	width: 20px;
+	height: 20px;
+}
+
+.book-search button:hover, .borrowers-search button:hover {
+	filter: brightness(1.3);
+}
+
+#bar{
+	position: sticky;
+	top: 0;
+	width: 96%;
+	margin: 0 auto;
+	padding: 10px;
+	height: 50px;
+	margin-top: 10px;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.5);
+	z-index: 2;
+	display: flex;
+	justify-content: stretch;
+	background: var(--bg-test);
+	border-radius: 10px;
+}
+
+#bar img{
+	width: 50px;
+	height: 50px;
+	filter: invert();
+	padding: 10px;
+	margin: 0 10px;
+}
+
+#bar .logo-name{
+	flex: 0 0 80%;
+	color: var(--text-secondary);
+	text-align: center;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#bar .logo-name h2{
+	padding: 10px 10px;
+	margin: 0 10px;
+}
+
+#bar .div{
+	flex: 0 0 20%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#bar .div label{
+	flex: 0 0 70%;
+	color: var(--text-secondary);
+	text-align: right;
+	font-weight: bold;
+}
+
+#bar .div input{
+	padding: 3px;
+	border: solid 1px var(--text-secondary);
+	text-align: center;
+	width: 40px;
+	font-weight: bold;
+	color: var(--text-secondary);
+	background-color: var(--bg-test);
+}
+
+#close-search{
+	display: none;
+}
+
+#table{
+	margin: 10px auto;
+	width: 96%;
+	padding: 10px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.5), -0 -1px 2px rgba(0,0,0,0.5);
+	background: var(--bg-test);
+	border-radius: 10px;
+}
+
+#table-head{
+	width: 98%;
+	position: sticky;
+	top: 52px;
+	z-index: 2;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-column-gap: 0.5em;
+	padding: 5px;
+	color: var(--text-secondary);
+	text-transform: uppercase;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.5), -0 -1px 2px rgba(0,0,0,0.5);
+	background: var(--bg-test);
+	border-radius: 5px;
+}
+
+#table-head th{
+	text-align: center;
+}
+
+.table-body img, .borrowers-head img{
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+}
+
+#options{
+	position: relative;
+	background: var(--text-secondary);
+}
+
+
+
+#options button:hover{
+	background: var(--bg-primary);
+}
+
+#options:hover{
+	z-index: 2;
+}
+
+#options:hover .options{
+	display: grid;
+}
+
+.options{
+	position: absolute;
+	right: -2vw;
+	bottom: 0;
+	width: 190px;
+	background: var(--text-secondary);
+	display: none;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.5), -0 -1px 2px rgba(0,0,0,0.5);
+}
+
+.options span{
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.options span:hover{
+	background: var(--bg-primary);
+}
+
+
+.options span img{
+	flex: 1;
+}
+
+.options span p{
+	flex: 6;
+	padding: 10px;
+	font-size: 15px;
+	text-align: left;
+	color: var(--bg-secondary);
+}
+
+.options span:hover{
+	background: radial-gradient(brown, rgba(89,09,67,0.5));
+}
+
+#table button{
+	padding: 10px;
+	margin: 0 10px;
+	outline: none;
+	border: none;
+	color: var(--text-secondary);
+	background: var(--bg-primary);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.5), -0 -1px 2px rgba(0,0,0,0.5);
+}
+
+#table button:hover{
+	background: var(--bg-test);
+	color: var(--text-secondary);
+}
+
+/*BOOKS STYLES*/
+
+.table-body{
+	margin: 5px auto;
+	width: 96%;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-column-gap: 0.5em;
+	padding: 5px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.5), -0 -1px 2px rgba(0,0,0,0.5);
+	color: var(--text-secondary);
+}
+
+.table-body td{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.for-borrower{
+	width: 94%;
+	margin: 0 auto;
+	padding: 10px;
+	display: none;
+	grid-template-columns: repeat(4, 1fr);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.5), -0 -1px 2px rgba(0,0,0,0.5);
+}
+
+.show-hide-for-borrower{
+	display: grid;
+}
+
+.fb-btn-holder{
+	grid-column: 2/4;
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+#fb-btn{
+	height: 30px;
+	padding: 5px;
+	background: var(--bg-test);
+	color: var(--text-secondary);
+	border: solid 1px var(--text-secondary);
+	transition: var(--trasition-speed);
+}
+
+#fb-btn:hover {
+	background: var(--text-secondary);
+	color: var(--bg-test);
+	border: solid 1px var(--bg-secondary);
+}
+
+.span-img-flip{
+	transform: rotate(45deg);
+}
+
+.borrowered-out{
+	text-decoration: underline;
+	text-decoration-style: double;
+}
+
+/*BORROWERS STYLES*/
+
+.borrowers-search{
+	display: none;
+}
+
+.borrowers-form{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.borrowers-form button{
+	grid-column: 2/4;
+	grid-row: 3;
+	height: 30px;
+	padding: 5px;
+	background: var(--bg-test);
+	color: var(--text-secondary);
+	border: solid 2px var(--bg-secondary);
+	transition: var(--trasition-speed);
+	font-size: 15px;
+	letter-spacing: 0.05em;
+	border-radius: 5px;
+}
+
+.borr-table{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-column-gap: 0.5em;
+}
+
+.borrowers-table-body{
+	margin-top: 3px;
+	width: 94%;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 5px;
+}
+
+.borrowers-table-body td, .borrowers-table-body th{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+.borrowers-head{
+	width: 100%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+	color: var(--text-secondary);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.5), -0 -1px 2px rgba(0,0,0,0.5);
+}
+
+.borrowers-head th{
+	font-weight: normal;
+}
+
+
+#arrow-holder{
+	display: flex;
+	border: solid var(--text-secondary) 1px;
+	background: var(--bg-test);
+	color: var(--text-secondary);
+	padding: 3px;
+	cursor: pointer;
+	overflow: hidden;
+	margin-right: 3px;
+}
+
+#arrow-holder:hover{
+	filter: brightness(1.2);
+}
+
+#arrow{
+	padding: 3px;
+	transform: rotate(-90deg);
+	transition: none;
+	border: solid transparent;
+	text-align: left;
+}
+
+.borrowers-book-details{
+	width: 90%;
+	height: initial;
+	padding: 5px;
+	margin: 1px auto;
+	display: none;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 0.2em;
+	background: var(--bg-test);
+	color: var(--text-secondary);
+	transition: ease 2000ms;
+	overflow: hidden;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.active-book-detail{
+	display: grid;
+}
+
+.borrowers-book-details td{
+	text-align: center;
+}
+
+.success, .error{
+	position: fixed;
+	top: 40%;
+	left: 10%;
+	width: 80%;
+	margin: 0 auto;
+	transform: translate(-50,-50);
+	padding: 20px;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	z-index: 4;
+	border-radius: 10px;
+}
+
+.success{
+	background: rgb(51, 216, 125);
+}
+
+.error{
+	background: rgb(207, 46, 46);
+}
+
+#close-search{
+	position: absolute;
+	left: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	align-self: center;
+	color: var(--text-secondary);
+	background-color: var(--bg-test);
+	border: solid 1px var(--text-secondary);
+}
+
+#close-search:hover{
+	filter: brightness(1.2);
+}
+
+.input-hide{
+	display: none;
+}
+.......................................................
+
