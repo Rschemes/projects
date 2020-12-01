@@ -1,0 +1,222 @@
+.navigator-options{
+	margin-bottom: 2%;
+}
+
+
+.navigator-options{
+	margin-bottom: 2%;
+}
+
+.rooms{
+	width: 90%;
+	margin: 2% auto;
+	display: flex;
+	flex-wrap: wrap;
+	border: solid 3px orange;
+	padding: 1%;
+	box-shadow: 2px 3px 15px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	min-height: 400px; 
+}
+
+
+#room-descript{
+	flex: 3;
+	min-width: 400px;
+	background: tomato;
+	padding: 2%;
+	border-radius: 30px 0 0 30px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+#room-namePhoto{
+	flex: 3;
+	min-width: 300px;
+	color: white;
+}
+
+#room-namePhoto h2,
+#room-namePhoto h6{
+	padding: 1% 2%;
+	font-size: 150%;
+	text-align: center;
+}
+
+#room-namePhoto img{
+	width: 100%;
+	height: 80%;
+	border-radius: 5px 7px 5px 7px;
+}
+
+#descript{
+	flex: 1;
+	min-width: 200px;
+	margin: 0 1%;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+#ratings{
+	flex: 1;
+	min-width: 200px;
+	color: white;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+
+#room-price{
+	flex: 1;
+	min-width: 400px;
+	padding: 2%;
+	background: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#room-price h2{
+	color: tomato;
+	padding: 2% 0;
+}
+
+#room-price button{
+	outline: none;
+	border: solid 2px tomato;
+	padding: 8% 10%;
+	background: white;
+	color: tomato;
+	border-radius: 20px 10px 20px 10px;
+	transition: ease 2s;
+	font-weight: bolder; 
+	transform-origin: center;
+}
+
+#room-price button:hover{
+	transform: rotateY(360deg);
+	background: tomato;
+	color: white;
+	border-radius: 10px 5px 5px 10px;
+}
+
+/*STYLES FOR THE HELP PAGE GOES HERE */
+
+
+.help{
+	background-image: url('dp3.jpg');
+	background-size: 100% 100%;
+	width: 90%;
+	height: 500px;
+	margin: auto;
+	border-radius: 20px;
+	box-shadow: 2px 1px 3px 2px grey;
+	overflow: hidden;
+}
+
+#help{
+	height: 100%;
+	width: 100%;
+	background: rgba(100,90,0,0.5);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#help h2, #help p, #help a{
+	padding: 5px;
+	font-size: 150%;
+	color: white;
+	text-align: center;
+	overflow-wrap: break-word;
+}
+
+#help a:hover{
+	color: tomato;
+}
+
+@media (max-width: 500px) {
+
+.rooms{
+	min-width: 100%;
+	margin: 2% 0;
+	display: flex;
+	flex-direction: column;
+}
+
+
+#room-descript{
+	min-width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#room-namePhoto{
+	flex: 1;
+	min-width: 100%;
+}
+
+#room-namePhoto h2,
+#room-namePhoto h6{
+	font-size: 70%;
+}
+
+#room-namePhoto img{
+	width: 100%;
+	height: 80%;
+	border-radius: 5px 7px 5px 7px;
+}
+
+#descript{
+	flex: 1;
+	min-width: 100%;
+}
+
+#descript p{
+	font-size: 70%;
+}
+
+#ratings h2,
+#ratings h5,
+#ratings p{
+	font-size: 70%;
+}
+
+#ratings{
+	min-width: 100%;
+	margin-top: 2%;
+}
+
+#room-price{
+	min-width: 100%;
+}
+
+#room-price h2{
+	color: tomato;
+	padding: 2% 0;
+	font-size: 100%;
+}
+
+#room-price button{
+	padding: 4% 5%;
+	font-size: 70%;
+}
+
+.help{
+	width: 100%;
+	border-radius: 2px;
+	box-shadow: none;
+}
+
+
+#help h2, #help p, #help a{
+	padding: 2%;
+	font-size: 80%;
+}
+
+
+}
